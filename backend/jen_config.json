@@ -1,0 +1,8 @@
+{
+  "URL": "http://localhost:8090",
+  "USERNAME": "pugalol",
+  "PASSWORD": "root",
+  "PIPELINE": "RemoteRender",
+  "TOKEN": "N212x6K5d3JnDN7",
+  "UPLOAD_FOLDER": "C:/Users/pugalol/AppData/Local/Jenkins/.jenkins/workspace/serv"
+}

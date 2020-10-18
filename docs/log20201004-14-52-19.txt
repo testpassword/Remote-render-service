@@ -1,0 +1,40 @@
+2020-10-04 14:52:21,516 INFO rpr.engine.init [2688]:  RPR Core version: 1.35.0 build 0x6a03c5b6
+2020-10-04 14:52:21,529 INFO rpr.engine.init [2688]:  Image Filters version 1.5.1 build 0xefd92438
+2020-10-04 14:52:21,531 INFO rpr.default [2688]:  rprsdk_bin_path: C:\Users\pugalol\AppData\Roaming\Blender Foundation\Blender\2.90\scripts\addons\rprblender
+Blender 2.90.1 (hash 3e85bb34d0d7 built 2020-09-23 08:36:20)
+Read prefs: C:\Users\pugalol\AppData\Roaming\Blender Foundation\Blender\2.90\config\userpref.blend
+found bundled python: C:\Program Files\Blender Foundation\Blender 2.90\2.90\python
+Read blend: V:/projects/Test-tasks/Luxoft/docs/render_tmp\scene.blend
+Fra:1 Mem:148.56M (Peak 148.59M) | Время:00:00.01 | Start syncing
+Fra:1 Mem:148.56M (Peak 148.59M) | Время:00:00.02 | Syncing object (0/6): Light
+Fra:1 Mem:148.56M (Peak 148.59M) | Время:00:00.02 | Syncing object (1/6): Плоскость
+Fra:1 Mem:148.56M (Peak 148.59M) | Время:00:00.02 | Syncing object (2/6): Плоскость.001
+Fra:1 Mem:148.56M (Peak 148.59M) | Время:00:00.02 | Syncing object (3/6): Плоскость.002
+Fra:1 Mem:148.56M (Peak 148.59M) | Время:00:00.02 | Syncing object (4/6): Икосфера
+Fra:1 Mem:256.37M (Peak 256.37M) | Время:00:01.53 | Syncing instances 0%
+Fra:1 Mem:256.37M (Peak 256.37M) | Время:00:01.53 | Syncing instances 100%
+Fra:1 Mem:256.37M (Peak 256.37M) | Время:00:01.53 | Syncing particles
+Fra:1 Mem:256.37M (Peak 256.37M) | Время:00:01.64 | Finish syncing
+Fra:1 Mem:256.37M (Peak 256.37M) | Время:00:01.64 | Start render
+Fra:1 Mem:256.37M (Peak 256.37M) | Время:00:01.64 | Render Time: 0.0 sec | Samples: 0/64
+Fra:1 Mem:256.37M (Peak 295.92M) | Время:00:26.66 | Render Time: 25.0 sec | Samples: 4/64
+Fra:1 Mem:256.37M (Peak 295.92M) | Время:00:51.07 | Render Time: 49.4 sec | Samples: 8/64
+Fra:1 Mem:256.37M (Peak 295.92M) | Время:01:15.58 | Render Time: 73.9 sec | Samples: 12/64
+Fra:1 Mem:256.37M (Peak 295.92M) | Время:01:39.83 | Render Time: 98.2 sec | Samples: 16/64
+Fra:1 Mem:256.37M (Peak 295.92M) | Время:02:04.33 | Render Time: 122.7 sec | Samples: 20/64
+Fra:1 Mem:256.37M (Peak 295.92M) | Время:02:29.38 | Render Time: 147.7 sec | Samples: 24/64
+Fra:1 Mem:256.37M (Peak 295.92M) | Время:02:54.25 | Render Time: 172.6 sec | Samples: 28/64
+Fra:1 Mem:256.37M (Peak 295.92M) | Время:03:19.13 | Render Time: 197.5 sec | Samples: 32/64
+Fra:1 Mem:256.37M (Peak 295.92M) | Время:03:45.97 | Render Time: 224.3 sec | Samples: 36/64
+Fra:1 Mem:256.37M (Peak 295.92M) | Время:04:11.10 | Render Time: 249.5 sec | Samples: 40/64
+Fra:1 Mem:256.37M (Peak 295.92M) | Время:04:35.82 | Render Time: 274.2 sec | Samples: 44/64
+Fra:1 Mem:256.37M (Peak 295.92M) | Время:05:00.42 | Render Time: 298.8 sec | Samples: 48/64
+Fra:1 Mem:256.37M (Peak 295.92M) | Время:05:25.13 | Render Time: 323.5 sec | Samples: 52/64
+Fra:1 Mem:256.37M (Peak 295.92M) | Время:05:49.95 | Render Time: 348.3 sec | Samples: 56/64
+Fra:1 Mem:256.37M (Peak 295.92M) | Время:06:14.91 | Render Time: 373.3 sec | Samples: 60/64
+Fra:1 Mem:256.37M (Peak 295.92M) | Время:06:39.53 | Applying denoising final image
+Fra:1 Mem:256.37M (Peak 295.92M) | Время:06:40.82 | Finish render
+Fra:1 Mem:204.85M (Peak 295.92M) | Время:06:40.96 | Сцена: Scene Вершин:0 Граней:0 Ламп:0
+Saved: 'V:\projects\Test-tasks\Luxoft\docs\image20201004-14-52-19.jpg'
+ Time: 06:41.52 (Saving: 00:00.55)
+
