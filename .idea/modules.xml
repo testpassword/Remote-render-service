@@ -5,7 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/backend/backend.iml" filepath="$PROJECT_DIR$/backend/backend.iml" />
       <module fileurl="file://$PROJECT_DIR$/frontend/frontend.iml" filepath="$PROJECT_DIR$/frontend/frontend.iml" />
       <module fileurl="file://$PROJECT_DIR$/pipeline/pipeline.iml" filepath="$PROJECT_DIR$/pipeline/pipeline.iml" />
-      <module fileurl="file://$PROJECT_DIR$/remote_render/remote_render.iml" filepath="$PROJECT_DIR$/remote_render/remote_render.iml" />
+      <module fileurl="file://$PROJECT_DIR$/remote_render/render.iml" filepath="$PROJECT_DIR$/remote_render/render.iml" />
     </modules>
   </component>
 </project>

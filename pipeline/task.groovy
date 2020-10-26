@@ -18,9 +18,7 @@ pipeline {
                     def inputFile = new File("$INPUT_FILE") //this trick allow us to download file anywhere from fs
                     def fileName = inputFile.getName()
                     def fileFolder = inputFile.getParent()
-                    dir(fileFolder) {
-                        stash allowEmpty: false, includes: fileName, name: 'scene'
-                    }
+                    dir(fileFolder) { stash allowEmpty: false, includes: fileName, name: 'scene' }
                 }
             }
         }
@@ -37,8 +35,7 @@ pipeline {
                             "--format $FORMAT " +
                             "--compress $COMPRESSION " +
                             "--aa $ANTIALIASING_ALGORITHM"
-                    if (isUnix()) sh """$command"""
-                    else bat """$command"""
+                    if (isUnix()) sh command else bat command
                 }
             }
             post {
@@ -46,9 +43,7 @@ pipeline {
                     archiveArtifacts artifacts: 'image*', fingerprint: true
                     archiveArtifacts artifacts: 'log*', fingerprint: true
                 }
-                cleanup {
-                    cleanWs()
-                }
+                cleanup { cleanWs() }
             }
         }
     }
