@@ -13,9 +13,18 @@
 export default {
   name: "Footer",
   props: {
-    logoPath: String,
-    url: String,
-    devYear: Date
+    logoPath: {
+      type: String,
+      required: true
+    },
+    url: {
+      type: String,
+      required: true
+    },
+    devYear: {
+      type: Date,
+      default: Date()
+    }
   }
 }
 </script>
@@ -31,16 +40,12 @@ export default {
   left: 0;
 }
 
-figure img {
-  height: 35px;
-}
+figure img { height: 35px }
 
 figcaption {
   font-size: 0.8em;
   display: block;
 }
 
-figure {
-  padding: 0.5%
-}
+figure { padding: 0.5% }
 </style>

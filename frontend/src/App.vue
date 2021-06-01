@@ -50,9 +50,7 @@ export default {
   font-weight: normal;
 }
 
-body {
-  background-color: whitesmoke;
-}
+body { background-color: whitesmoke }
 
 #contentContainer {
   margin-top: 90px;
@@ -72,31 +70,21 @@ a {
   border-radius: 2px;
 }
 
-hr {
-  color: #f41c52;
-}
+hr { color: #f41c52 }
 
-.shaded {
-  box-shadow: 0 0 10px 1px black
-}
+.shaded { box-shadow: 0 0 10px 1px black }
 
 /* постоянная тень*/
 
-.shaded:hover, .animated:hover {
-  transition: 0.5s
-}
+.shaded:hover, .animated:hover { transition: 0.5s }
 
 /*время эффекта*/
 
-.shaded:hover {
-  box-shadow: 0 0 20px 2px black
-}
+.shaded:hover { box-shadow: 0 0 20px 2px black }
 
 /*увеличение тени при наведении*/
 
-.animated:hover {
-  transform: scale(1.05)
-}
+.animated:hover { transform: scale(1.05) }
 
 /*увеличение элемента при наведении*/
 
@@ -110,9 +98,7 @@ hr {
   color: white;
 }
 
-.bordered {
-  border: 2px solid #f41c52
-}
+.bordered { border: 2px solid #f41c52 }
 
 /*красные края*/
 .rounded { /*скруглённые края*/
@@ -127,11 +113,7 @@ hr {
 }
 
 @-webkit-keyframes rotation {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-  }
+  from { -webkit-transform: rotate(0deg) }
+  to { -webkit-transform: rotate(360deg) }
 }
 </style>

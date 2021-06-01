@@ -10,9 +10,18 @@
 export default {
   name: "NotFoundError",
   props: {
-    errorCode: String,
-    errorMessage: String,
-    redirectTo: String
+    errorCode: {
+      type: String,
+      required: true
+    },
+    errorMessage: {
+      type: String,
+      default: ""
+    },
+    redirectTo: {
+      type: String,
+      required: true
+    }
   }
 }
 </script>

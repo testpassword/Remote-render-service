@@ -6,9 +6,18 @@
 export default {
   name: "Notification",
   props: {
-    isError: Boolean,
-    isVisible: Boolean,
-    message: String
+    isError: {
+      type: Boolean,
+      default: false
+    },
+    isVisible: {
+      type: Boolean,
+      default: true
+    },
+    message: {
+      type: String,
+      default: ""
+    }
   }
 }
 </script>
@@ -19,11 +28,7 @@ export default {
   padding: 10px;
 }
 
-.stub {
-  background-color: #000720
-}
+.stub { background-color: #000720 }
 
-.errorStub {
-  background-color: #dc143b
-}
+.errorStub { background-color: #dc143b }
 </style>

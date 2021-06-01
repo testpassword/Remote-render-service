@@ -8,8 +8,14 @@
 export default {
   name: "CheckButton",
   props: {
-    label: String,
-    color: String
+    label: {
+      type: String,
+      default: ""
+    },
+    color: {
+      type: String,
+      required: true
+    }
   }
 }
 </script>
@@ -56,43 +62,23 @@ button:active::after {
   transition: 0s
 }
 
-button:focus {
-  outline: 0
-}
+button:focus { outline: 0 }
 
-.red {
-  background-color: #eb2a5a
-}
+.red { background-color: #eb2a5a }
 
-.red:hover {
-  box-shadow: 0 2px 10px 5px #eb2a5a
-}
+.red:hover { box-shadow: 0 2px 10px 5px #eb2a5a }
 
-.red::after {
-  background: #eb2a5a
-}
+.red::after { background: #eb2a5a }
 
-.yellow {
-  background-color: #ead541
-}
+.yellow { background-color: #ead541 }
 
-.yellow:hover {
-  box-shadow: 0 2px 10px 5px #ead541
-}
+.yellow:hover { box-shadow: 0 2px 10px 5px #ead541 }
 
-.yellow::after {
-  background: #ead541
-}
+.yellow::after { background: #ead541 }
 
-.blue {
-  background-color: #0a72b0
-}
+.blue { background-color: #0a72b0 }
 
-.blue:hover {
-  box-shadow: 0 2px 10px 5px #0a72b0
-}
+.blue:hover { box-shadow: 0 2px 10px 5px #0a72b0 }
 
-.blue::after {
-  background: #0a72b0
-}
+.blue::after { background: #0a72b0 }
 </style>

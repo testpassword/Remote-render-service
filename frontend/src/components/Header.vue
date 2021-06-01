@@ -13,13 +13,27 @@
 </template>
 
 <script>
+import Vue from "vue"
+
 export default {
   name: "Header",
   props: {
-    title: String,
-    authorName: String,
-    authorUrl: String,
-    authorLogoPath: String
+    title: {
+      type: String,
+      default: Vue.name
+    },
+    authorName: {
+      type: String,
+      default: ""
+    },
+    authorUrl: {
+      type: String,
+      default: ""
+    },
+    authorLogoPath: {
+      type: String,
+      required: false
+    }
   }
 }
 </script>
@@ -36,9 +50,7 @@ export default {
   background-color: #000720;
 }
 
-#credit {
-  margin: auto
-}
+#credit { margin: auto }
 
 #credit img {
   width: 40px;

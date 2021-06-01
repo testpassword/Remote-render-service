@@ -90,8 +90,7 @@ export default {
       try {
         const reqForm = new FormData()
         const f = document.getElementById("fileInput").files[0]
-        if (f !== undefined && f.name.includes(".zip"))
-          reqForm.append("INPUT_FILE", f)
+        if (f !== undefined && f.name.includes(".zip")) reqForm.append("INPUT_FILE", f)
         else throw TypeError("Разрешены только файлы формата zip")
         const w = document.getElementById("widthInput").value
         const h = document.getElementById("heightInput").value
@@ -136,16 +135,13 @@ export default {
   },
   watch: {
     isAnimated: function(newVal) {
-      const arraySize = this.animatedText.length
       let counter = 0
       if (newVal === true) {
         this.timerId = setInterval(() => {
-          this.statusLbl.message = this.animatedText[counter % arraySize]
+          this.statusLbl.message = this.animatedText[counter % this.animatedText.length]
           counter++
         }, 250)
-      } else {
-        clearTimeout(this.timerId)
-      }
+      } else clearTimeout(this.timerId)
     }
   }
 }
@@ -169,13 +165,9 @@ export default {
   margin-bottom: 13px;
 }
 
-#outputContainer {
-  margin-bottom: 130px;
-}
+#outputContainer { margin-bottom: 130px }
 
-input, img {
-  background-color: white;
-}
+input, img { background-color: white }
 
 img {
   box-shadow: inset 0 0 7px 1px gray;
@@ -196,11 +188,7 @@ img {
   color: white;
 }
 
-#outputTable td {
-  text-align: start;
-}
+#outputTable td { text-align: start }
 
-#outputTable * {
-  padding: 15px;
-}
+#outputTable * { padding: 15px }
 </style>
