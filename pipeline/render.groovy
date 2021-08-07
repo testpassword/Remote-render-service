@@ -15,10 +15,12 @@ pipeline {
             agent any
             steps {
                 script {
-                    def inputFile = new File("$INPUT_FILE") //this trick allow us to download file anywhere from fs
-                    def fileName = inputFile.getName()
-                    def fileFolder = inputFile.getParent()
-                    dir(fileFolder) { stash allowEmpty: false, includes: fileName, name: 'scene' }
+                    //this trick allow us to download file anywhere from fs, not only from jenkins workdir
+                    new File("$INPUT_FILE").with { f ->
+                        dir(f.getParent()) {
+                            stash allowEmpty: false, includes: f.getName(), name: 'scene'
+                        }
+                    }
                 }
             }
         }
@@ -27,14 +29,14 @@ pipeline {
             steps {
                 unstash "scene"
                 script {
-                    def command = "python ${env.bps} " +
-                            "--input $INPUT_FILE " +
-                            "--output ${env.WORKSPACE}/ " +
-                            "--width $WIDTH " +
-                            "--height $HEIGHT " +
-                            "--format $FORMAT " +
-                            "--compress $COMPRESSION " +
-                            "--aa $ANTIALIASING_ALGORITHM"
+                    def command = """python ${env.bps} 
+                        --input $INPUT_FILE 
+                        --output ${env.WORKSPACE}/ 
+                        --width $WIDTH 
+                        --height $HEIGHT 
+                        --format $FORMAT 
+                        --compress $COMPRESSION 
+                        --aa $ANTIALIASING_ALGORITHM"""
                     if (isUnix()) sh command else bat command
                 }
             }

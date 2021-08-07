@@ -1,0 +1,1 @@
+java -jar agent.jar -jnlpUrl http://localhost:8090/computer/render/slave-agent.jnlp -secret 962837994f5cf7aeb9b133392f605541ea325660d97e5451fc472faf0a47043b -workDir "/Users/Shared/jenkins_fs"

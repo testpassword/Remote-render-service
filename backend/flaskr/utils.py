@@ -9,15 +9,15 @@ from flask import current_app
 
 
 # upload file to server temporary folder
-def uploadFile(req):
-    rawFile = req.files["INPUT_FILE"]
-    filename = secure_filename(rawFile.filename)
-    absPath = path.join(current_app.config["UPLOAD_FOLDER"], filename)
-    rawFile.save(absPath)
-    return absPath.replace("\\", "/")  # normalize string to compatibility on Unix and Windows
+def upload_file(req):
+    raw_file = req.files["INPUT_FILE"]
+    filename = secure_filename(raw_file.filename)
+    abs_path = path.join(current_app.config["UPLOAD_FOLDER"], filename)
+    raw_file.save(abs_path)
+    return abs_path.replace("\\", "/")  # normalize string to compatibility on Unix and Windows
 
 
 # encode image to base64 string representation
-def encodeImage(imagePath):
+def encode_image(imagePath):
     with open(imagePath, "rb") as f:
         return base64.b64encode(f.read()).decode("ascii")

@@ -10,11 +10,11 @@
         </label>
         <br/>
         <label> Ширина:
-          <input id="widthInput" value="500" type="number" placeholder="[2 ; 15360]" class="colored illuminated animated rounded">
+          <input id="widthInput" v-model="width" value="500" type="number" placeholder="[2 ; 15360]" class="colored illuminated animated rounded">
         </label>
         <br/>
         <label> Высота:
-          <input id="heightInput" value="281" type="number" placeholder="[2 ; 15360]" class="colored illuminated animated rounded">
+          <input id="heightInput" v-model="height" value="281" type="number" placeholder="[2 ; 15360]" class="colored illuminated animated rounded">
         </label>
         <br/>
         <label> Формат:
@@ -74,6 +74,8 @@ export default {
   components: {Notification, CheckButton},
   data() {
     return {
+      width: 500,
+      height: 281,
       statusLbl: {
         message: "",
         isError: false,
@@ -88,23 +90,20 @@ export default {
   methods: {
     validateForm() {
       try {
+        const { width, height } = this.data
         const reqForm = new FormData()
         const f = document.getElementById("fileInput").files[0]
         if (f !== undefined && f.name.includes(".zip")) reqForm.append("INPUT_FILE", f)
         else throw TypeError("Разрешены только файлы формата zip")
-        const w = document.getElementById("widthInput").value
-        const h = document.getElementById("heightInput").value
-        if (Array.of(w, h).every( it => (it >= 2 && it <= 15360) )) {
-          reqForm.append("WIDTH", w)
-          reqForm.append("HEIGHT", h)
+        if (Array.of(width, height).every( it => (it >= 2 && it <= 15360) )) {
+          reqForm.append("WIDTH", width)
+          reqForm.append("HEIGHT", height)
         } else throw RangeError("Разрешение по X или Y может быть в интервале [2 ; 15360]")
-        const format = document.getElementById("formatInput").value
-        reqForm.append("FORMAT", format)
+        reqForm.append("FORMAT", document.getElementById("formatInput").value)
         const compr = document.getElementById("compressionInput").value
         if (compr >= 0 && compr <= 100) reqForm.append("COMPRESSION", compr)
         else throw RangeError("Сжатие в интервале min [0 ; 100] max")
-        const aa = document.getElementById("aaInput").value
-        reqForm.append("ANTIALIASING_ALGORITHM", aa)
+        reqForm.append("ANTIALIASING_ALGORITHM", document.getElementById("aaInput").value)
         this.sendForm(reqForm)
       } catch (e) {
         this.statusLbl.isError = true
@@ -115,22 +114,19 @@ export default {
       document.getElementById("submitBtn").disabled = true
       this.isAnimated = true
       this.statusLbl.isVisible = true
-      this.$axios.post("render", reqForm, {
-        headers: {
-          "Content-Type": "multipart/form-data"
-        }
-      }).then( response => {
-        this.statusLbl.isError = false
-        this.statusLbl.isVisible = false
-        this.log = response.data.log
-        document.getElementById("imgContainer").src = `data:image/jpeg;base64, ${response.data.img}`
-      }).catch( error => {
-        this.statusLbl.isError = true
+      this.$axios.post("render", reqForm, { headers: { "Content-Type": "multipart/form-data" } })
+        .then( response => {
+          this.statusLbl.isError = false
+          this.statusLbl.isVisible = false
+          this.log = response.data.log
+          document.getElementById("imgContainer").src = `data:image/jpeg;base64, ${response.data.img}`
+        }).catch( error => {
+          this.statusLbl.isError = true
         this.statusLbl.message = error.response.statusText
-      }).finally( () => {
-        document.getElementById("submitBtn").disabled = true
-        this.isAnimated = false
-      })
+        }).finally( () => {
+          document.getElementById("submitBtn").disabled = true
+          this.isAnimated = false
+        })
     }
   },
   watch: {

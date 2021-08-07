@@ -47,7 +47,7 @@ def main():
                         choices=["OFF", "FXAA", "5", "8", "11", "16", "32"])
     args = parser.parse_args()
     check_args(args)
-    tmp_dir = os.path.join(path.dirname(args.input), "render_tmp") # get the directory with the archive and create folder for temporary files inside
+    tmp_dir = os.path.join(path.dirname(args.input), "render_tmp")  # get the directory with the archive and create folder for temporary files inside
     os.mkdir(tmp_dir)
     try:
         with zipfile.ZipFile(args.input, "r") as archive:  # распаковывает архив в временную директорию
@@ -76,4 +76,5 @@ def main():
         rmtree(tmp_dir)  # delete temporary files after ourselves
 
 
-if __name__ == "__main__": main()
+if __name__ == "__main__":
+    main()
